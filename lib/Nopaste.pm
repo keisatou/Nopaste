@@ -9,7 +9,12 @@ use Nopaste::DB;
 
 use parent qw/Amon2/;
 # Enable project local mode.
-__PACKAGE__->make_local_context();
+#__PACKAGE__->make_local_context();
+
+# load plugins
+__PACKAGE__->load_plugins(
+    '+Amon2::Plugin::Model',
+);
 
 my $schema = Nopaste::DB::Schema->instance;
 
